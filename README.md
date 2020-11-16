@@ -1,5 +1,5 @@
-# Simple web portfolio
--
+### Simple web portfolio
+
 ## Features
 + parallax efect
 + navbar humberger
