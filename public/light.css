@@ -1,0 +1,254 @@
+body{
+  padding:0;
+  margin:0;
+  background-color:white;
+  color:#23272A;
+  overflow:hidden;
+  display:flex;
+  position:relative;
+  flex-direction:column;
+  height:100%;
+  top:45px;
+  font-family:sans-serif;
+}
+.tema {
+  background-color:transparent;
+  color:black;
+  padding:15px 32px;
+  display:inline-block;
+  text-decoration:none;
+  font-size:20px;
+  border:1px solid #23272A;
+  border-radius:10px;
+  transition-duration:0.5s;
+}
+.tema:hover{
+  background-color:#23272A;
+  color:white;
+  padding:15px 32px;
+  border-radius:10px;
+  display:inline-block;
+  text-decoration:none;
+  border:1px solid #23272A;
+  font-size:20px;
+}
+.tema::before{
+  content: 'Dark'
+}
+.navigasi{
+  position:fixed;
+  z-index:3;
+  background-color:white;
+  top:0;
+  width:100%;
+  box-shadow:1px 2px 6px black;
+}
+.navigasi ul{
+  list-style:none;
+  margin:0;
+  top:0;
+  padding:0;
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  text-align:center;
+}
+.navigasi ul li a {
+  display:block;
+  padding:40px 30px;
+  font-size:20px;
+  text-align:center;
+}
+a {
+  text-decoration:none;
+  color:black;
+}
+.navigasi .check:hover {
+  background-color:#23272A;
+}
+.navigasi .brand{
+  float:left;
+  display:block;
+  padding:20px 15px;
+  font-size:1.5em;
+}
+.navigasi .menu {
+  clear:both;
+  max-height:0;
+  transition:0.4s ease;
+}
+.navigasi .gambar{
+  cursor:pointer;
+  float:right;
+  display:inline-block;
+  padding:20px 10px;
+  position:relative;
+  user-select:none;
+  -webkit-user-select:none;
+  margin:10px;
+}
+.navigasi .gambar .gambar-menu {
+  background:#333;
+  display:block;
+  height:3px;
+  position:relative;
+  transition: background 0.1s ease;
+  width:22px;
+  background-color:black;
+  border-radius:5px;
+}
+.navigasi .gambar .gambar-menu::before,
+.navigasi .gambar .gambar-menu::after{
+  background:black;
+  content:'';
+  display:block;
+  height:100%;
+  position:absolute;
+  transition: all 0.3 ease;
+  width:100%;
+}
+.navigasi .gambar .gambar-menu::before{
+  top:5px;
+  background-color:black;
+  border-radius:5px;
+}
+.navigasi .gambar .gambar-menu::after{
+  top:-5px;
+  background-color:black;
+  border-radius:5px;
+}
+.navigasi .check {
+  display:none;
+}
+.navigasi .check:checked ~ .menu{
+  max-height:1000px;
+}
+.navigasi .check:checked ~ .gambar .gambar-menu {
+  background:transparent;
+}
+.navigasi .check:checked ~ .gambar .gambar-menu::before{
+  transform:rotate(45deg)
+}
+.navigasi .check:checked ~ .gambar .gambar-menu::after {
+  transform:rotate(-45deg)
+}
+.navigasi .check:checked ~ .gambar:not(.steps) .gambar-menu::before,
+.navigasi .check:checked ~ .gambar:not(.steps) .gambar-menu::after{
+  top:0;
+}
+@media (min-width:48em) {
+  .navigasi li {
+    float:left;
+  }
+  .navigasi {
+    position:fixed;
+    top:0;
+  }
+  .navigasi ul li a {
+    padding:20px 30px;
+  }
+  .navigasi .menu {
+    clear:none;
+    float:right;
+    max-height:none;
+    top:25px;
+    padding:0px 30px;
+  }
+  .navigasi .gambar {
+    display:none;
+  }
+  .navigasi .brand {
+    font-size:2em;
+    padding:35px 15px;
+    font-weight: bold;
+  }
+  .navigasi ul {
+    height:auto;
+  }
+  .jumbotron .avatar {
+    margin:20px;
+    width:150px;
+    height:150px;
+  }
+  body {
+    top:100px;
+  }
+  .jumbotron .text{
+    text-align:center;
+  }
+}
+.jumbotron {
+  width:100%;
+  /*background-color:#2c2f33;*/
+  background-color:transparent;
+  padding:60px 0px;
+  /*text-align:center;*/
+  /*background:url("https://cdn.glitch.com/826cdd08-0c76-4797-865f-900ef8309d70%2F20201018_170823.jpg?v=1604312481290");*/
+  opacity:0;
+  background-repeat:no-repeat;
+  background-size:cover;
+  text-shadow:1px 1px 6px white;
+  transform:translateY(-100%);
+  transition:all 1.5s ease;
+}
+.jumbotron.on{
+  opacity:1;
+  transform:translateY(0);
+  transition:all 1.5s ease;
+}
+.jumbotron .avatar {
+  border-radius:50%;
+  border:1px solid black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.jumbotron .text {
+  margin:10px;
+}
+.jumbotron .text span {
+  font-family: 'Courgette', cursive;
+  float:left;
+  font-size:30px;
+  margin:5px;
+}
+.judul {
+  text-align:center;
+}
+.judul-pembatas {
+  margin:20px;
+  float:center;
+}
+.container h3{
+  padding:0px 15px;
+  text-decoration:underline;
+  font-style:italic;
+  font-weight:bold;
+}
+.container p {
+  font-size:22px;
+  margin:0 auto;
+  overflow:hidden;
+  font-family: 'Roboto Mono', monospace;
+}
+.container .b {
+  opacity:0;
+  transition:all 1s ease;
+  transform:translateX(100%);
+}
+.container .b.on {
+  opacity:1;
+  transform:translateX(0%);
+}
+.container {
+  opacity:0;
+  transition:all 1s ease;
+  transform:translateY(100%)
+}
+.container.on {
+  opacity:1;
+  transform:translateY(0)
+}
+@media (min-width: 48em) {
+  .container {
+    width: 50%;
+  }
+}
