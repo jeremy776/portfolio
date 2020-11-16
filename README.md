@@ -1,6 +1,4 @@
-# portfolio
----
-Simple portfolio website
+# Simple web portfolio
 -
 ## Features
 + parallax efect
